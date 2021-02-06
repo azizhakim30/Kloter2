@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soal No. 1</title>
+    <style>
+      body {
+        background-color: grey;
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      .container {
+        background-color: white;
+        width: 600px;
+        margin: 30px auto;
+        text-align: center;
+        padding: 30px;
+        border-radius: 10px;
+      }
+      p {
+        text-align: justify;
+      }
+
+      button {
+        width: 180px;
+      }
+      textarea {
+        width: 580px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Soal No. 1</h1>
+      <h2 style="text-align: left">Created By: Azizul Hakim</h2>
+      <p>
+        Buatlah sebuah function sederhana untuk menghitung total gaji yang 
+        diperoleh oleh seorang pegawai / pastikan aplikasi bisa dijalankan 
+        pada IDE online ya
+      </p>
+      <label><strong>Golongan Pegawai</strong></label> <br />
+      <input
+        type="text"
+        name="golonganPegawai"
+        id="golonganPegawai"
+        placeholder="Golongan I/ II/ III/ IV"
+      /><br /><br />
+      <label><strong>Jenis Kelamin</strong></label> <br />
+      <input
+        type="text"
+        name="jenisKelamin"
+        id="jenisKelamin"
+        placeholder="Pria/ Wanita"
+      /><br /><br />
+      <label><strong>Status Perkawinan</strong></label> <br />
+      <input
+        type="text"
+        name="statusPerkawinan"
+        id="statusPerkawinan"
+        placeholder="Menikah/Lajang"
+      /><br /><br />
+      <label><strong>Jumlah Anak</strong></label> <br />
+      <input
+        type="text"
+        name="jumlahAnak"
+        id="jumlahAnak"
+        placeholder="Jumlah Anak(Maks. 2)"
+      /><br /><br />
+      <button onClick="hitungGaji()">Hitung Gaji</button>
+      <br /><br />
+      <textarea
+        style="font-size: 25px"
+        name="output"
+        id="output"
+        cols="30"
+        rows="10"
+      ></textarea
+      ><br />
+    </div>
+  </body>
+  <script>
+    function hitungGaji() {
+      var golonganPegawai = document.getElementById("golonganPegawai").value;
+      var jenisKelamin = document.getElementById("jenisKelamin").value;
+      var statusPerkawinan = document.getElementById("statusPerkawinan").value;
+      var jumlahAnak = document.getElementById("jumlahAnak").value;
+      var output = document.getElementById("output");
+      var gaji = 0;
+      var tunjangan = 0;
+      if (golonganPegawai == "Golongan I" || "I") {
+        gaji = 1500000;
+        tunjangan = 200000;
+      } else if (golonganPegawai == "Golongan II" || "II") {
+        gaji = 2000000;
+        tunjangan = 400000;
+      } else if (golonganPegawai == "Golongan III" || "III") {
+        gaji = 3000000;
+        tunjangan = 600000;
+      } else if (golonganPegawai == "Golongan IV" || "IV") {
+        gaji = 4000000;
+        tunjangan = 1000000;
+      } else {
+        output.value = "Golongan Yang Dimasukan Tidak Ada!";
+        return;
+      }
+      var tunjanganIstri = 0;
+      var tunjanganAnak = 0;
+      if (statusPerkawinan == "Menikah" && jenisKelamin == "Pria"){
+        tunjanganIstri = 200000;
+        tunjanganAnak = 100000 * jumlahAnak;
+      } else {
+        tunjanganIstri = 0;
+        tunjanganAnak = 0;
+        return;
+      }
+
+      var total = gaji + tunjangan + tunjanganIstri + tunjanganAnak;
+      var pajak = total * 0.1;
+      var gajiSementara = total - pajak;
+      var potonganPensiun = 200000;
+      var bpjs = 150000;
+      var gajiBersih = gajiSementara - potonganPensiun - bpjs;
+
+      output.value =
+        "HASIL PERHITUNGAN GAJI" +
+        "\nINFO PEGAWAI" +
+        "\nGolongan : " + golonganPegawai +
+        "\nJenis Kelamin : " + jenisKelamin +
+        "\nJumlah Anak : " + jumlahAnak +
+        "\n" +
+        "\nGAJI DAN TUNJANGAN " +
+        "\nGaji Pokok : " + gaji +
+        "\nTunjangan : " + tunjangan +
+        "\nTunjangan Istri : " + tunjanganIstri +
+        "\nTunjangan Anak : " + tunjanganAnak +
+        "\nTotal : " + total +
+        "\nPajak 10% : " + pajak +
+        "\nGaji Sementara : " + gajiSementara +
+        "\nGAJI BERSIH" + 
+        "\nPotongan Pensiun : " + potonganPensiun +
+        "\nPotongan BPJS : " + bpjs +
+        "\nGaji Bersih : " + gajiBersih;
+    }
+  </script>
+</html>

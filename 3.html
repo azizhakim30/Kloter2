@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soal No. 3</title>
+    <style>
+      body {
+        background-color: grey;
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      .container {
+        background-color: white;
+        width: 600px;
+        margin: 30px auto;
+        text-align: center;
+        padding: 30px;
+        border-radius: 10px;
+      }
+      p {
+        text-align: justify;
+      }
+
+      button {
+        width: 180px;
+      }
+      textarea {
+        width: 580px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Soal No. 3</h1>
+      <h2 style="text-align: left">Created By: Azizul Hakim</h2>
+      <p>
+        Buatlah sebuah function untuk mencetak pola
+      </p>  
+      <button onClick="cetakPola()">Jumlah Pola</button>
+      <br /><br />
+      <textarea
+        style="font-size: 25px; overflow: auto"
+        name="output"
+        id="output"
+        cols="30"
+        rows="10"
+      ></textarea
+      ><br />
+    </div>
+  </body>
+  <script>
+    function cetakPola() {
+      var output = document.getElementById("output");
+      output.value = "";
+      b = '*';
+      s = ' ';
+      var gambar = '';
+
+      for (i = 1; i < 13; i++) {
+      if (i == 1 || i == 12) { 
+        gambar += s.repeat(5)+ b.repeat(7);
+      } else if (i == 2 || i == 11 ){
+        gambar += s.repeat(4) + b + s.repeat(5) + b;
+      } else if (i == 3 || i == 10 ){
+        gambar += s.repeat(3) + b + s.repeat(5) + b;
+      } else if (i == 4 || i == 9 ){
+         gambar += s.repeat(2) + b + s.repeat(5) + b;
+      } else if (i == 5 || i == 8 ){
+        gambar += s.repeat(1) + b + s.repeat(5) + b;
+      } else {
+        gambar += b.repeat(7);        
+      }
+      gambar += '\n'
+    }
+    output.value += gambar;
+  }
+      
+  </script>
+</html>
