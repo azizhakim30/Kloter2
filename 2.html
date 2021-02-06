@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal No. 1 (Angka)</title>
+    <style>
+
+        body {
+            background-color: grey;
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            
+        }
+        .container {
+            background-color: white;
+            width: 600px;
+            margin: 30px auto;
+            text-align: center;
+            padding: 30px;
+            border-radius: 10px;
+            
+        }
+        p {
+            text-align: justify;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Soal No.2</h1>
+        <h2 style="text-align: left;">Created By: Azizul Hakim</h2>
+        <p>Buatlah sebuah function sederhana untuk menfilter kata-kata 
+          pada array1 pada array2 kemudian jika ketemu ubah huruf 
+          vocalnya jadi (parameter yang ditentukan)
+        </p>
+        <label><strong>Array1</strong></label> <br />
+      <input
+        type="text"
+        name="array1"
+        id="array1"
+        placeholder=""
+      /><br /><br />
+      <label><strong>array2</strong></label> <br />
+      <input
+        type="text"
+        name="array2"
+        id="array2"
+        placeholder=""
+      /><br /><br />
+      <label><strong>Huruf Vocal</strong></label> <br />
+      <input
+        type="text"
+        name="hurufVocal"
+        id="hurufVocal"
+        placeholder=""
+      /><br /><br />
+        <button onClick="filterKonversiArray()">Filter dan Konversi</button>
+      <br /><br />
+      <textarea
+        style="font-size: 25px"
+        name="output"
+        id="output"
+        cols="30"
+        rows="10"
+      ></textarea
+      ><br />
+    </div>
+</body>
+<script>
+
+function filterKonversiArray(x){
+var array1 = document.getElementById('array1');
+var array2 = document.getElementById('array2');
+var hurufVocal = document.getElementById('hurufVocal');
+var output = document.getElementById('output');
+keluar.value = '';
+if (typeof hurufVocal == "string") {
+        var i = array2.filter(function (array1) {
+        var kalimat = kalimatScan.split("").replaceALL(['a, i, u, e, o'], hurufVocal) 
+        return 
+        });
+        output.value =
+          "Kata " + array1 +
+          "muncul sebanyak " +
+          i.length +"kali" + 
+          "\n" +
+          array2 + "=>" +
+          kalimat;
+        
+      } else {
+        output.value = "Huruf yang anda masukan salah!";
+        return;
+      }       
+        
+}   
+    
+    
+</script>
+</html>
